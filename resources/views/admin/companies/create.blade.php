@@ -58,6 +58,46 @@
                     </em>
                 @endif
             </div>
+            
+            <div class="form-group {{ $errors->has('website') ? 'has-error' : '' }}">
+                <label for="website">{{ trans('cruds.company.fields.website_url') }}*</label>
+                <input type="text" id="website" name="website" class="form-control" value="{{ old('website', isset($company) ? $company->website : '') }}" required>
+                @if($errors->has('website'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('website') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.company.fields.website_url_helper') }}
+                </p>
+            </div>
+
+            <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
+                <label for="phone">{{ trans('cruds.company.fields.phone') }}*</label>
+                <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', isset($company) ? $company->phone : '') }}" required>
+                @if($errors->has('phone'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('phone') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.company.fields.phone_helper') }}
+                </p>
+            </div>
+
+            <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                <label for="email">{{ trans('cruds.company.fields.email') }}*</label>
+                <input type="email" id="email" name="email" class="form-control" value="{{ old('email', isset($company) ? $company->email : '') }}" required>
+                @if($errors->has('email'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('email') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.company.fields.email_helper') }}
+                </p>
+            </div>
+
             <div class="form-group {{ $errors->has('categories') ? 'has-error' : '' }}">
                 <label for="categories">{{ trans('cruds.company.fields.categories') }}
                     <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
@@ -94,7 +134,6 @@
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>
         </form>
-
 
     </div>
 </div>

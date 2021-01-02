@@ -26,7 +26,7 @@ class HomePageController extends Controller
         $companies = Company::join('category_company', 'companies.id', '=', 'category_company.company_id')
             ->where('category_id', $category->id)
             ->paginate(9);
-
+ 
         return view('mainTable.category', compact('companies', 'category'));
     }
 

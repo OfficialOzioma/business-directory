@@ -19,12 +19,10 @@ class StoreCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'         => [
-                'required',
-            ],
+            'name' => 'required|unique:categories|min:2',
             'categories.*' => [
                 'integer',
-            ],
+            ], 
             'categories'   => [
                 'array',
             ],

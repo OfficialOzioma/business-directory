@@ -80,6 +80,7 @@
                                 </a></li>
                             @endforeach
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location<a href="{{ route('search', ['city_id' => $company->city->id]) }}">{{ $company->city->name }}</a></li>
+							
 						</ul>
 					</div>
                     <br>
@@ -97,6 +98,13 @@
 								<p>{{ $company->description}}</p>
 							</div>
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+								<h3 class="tab-title">Contact details</h3>
+								<p> <i class="fa fa-envelope-open" aria-hidden="true"></i> {{ $company->email}}</p>
+								<p> <i class="fa fa-phone-square" aria-hidden="true"></i> {{ $company->phone}}</p>
+								<p> <i class="fa fa-globe" aria-hidden="true"></i> {{ $company->website}}</p>
+
+							</div>
+							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 								<h3 class="tab-title">Where to find</h3>
 								<p>{{ $company->address}}</p>
 							</div>
